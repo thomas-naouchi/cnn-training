@@ -2,7 +2,7 @@
 
 This exercise consists of training a convolutional neural network on a dataset of image/artist pairs to predict the artist given an image
 
-## Initial tentative
+## Initial approach
 1. Import the data from google drive and store all paintings of the same artist in a numpy array
     -   Optional : shuffle each artist array
 2. For each artist array, train-test split :
@@ -21,3 +21,17 @@ This exercise consists of training a convolutional neural network on a dataset o
 7. Get the average of all stored metrics + std deviation
 8. Using these same parameters, train a new model on all the dataset and save it 
 
+
+## Deeper dive in technicalities
+
+###### importing the data in numpy arrays:
+27 arrays because we have 27 artists
+Each array will be named by an artist name and contain the images of the corresponding artist
+I stored the images of each artist in a different array, then stored this array in a dictionary
+
+TODO :
+    -   transform each array to a numpy array
+    -   shuffle using a seed, for reproducibility
+    -   divide each array into 75% train - 25% test
+    -   merge all train arrays together and all test arrays together
+    -   split train and test into X_train, y_train, X_test, y_test
