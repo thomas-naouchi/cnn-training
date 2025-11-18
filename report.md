@@ -36,5 +36,9 @@ I shuffled all the images in place using a seed for reproducibility
 Train and test sets are numpy arrays of [image, label] pairs, which will make it easier to divide them into X_train, y_train, X_test, y_test
 X_train and X_test images were normalized by changing the type to 'float32' and dividing each value by 255
 y_train and y_test artist names were encoded using sklearn.preprocessing
+Small thing i fixed :
+-   shuffle all the training set before dividing into X_train, y_train
+-   shuffle all the testing set before dividing into X_test, y_test
+-   because shuffling the initial arrays will only define which of the data will go to training and testing, not the order in which it will be fed to the neural network. we need to change this order so not all images that have the same artist appear in the same batch
 
 ###### cnn training
