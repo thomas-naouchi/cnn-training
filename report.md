@@ -27,11 +27,14 @@ This exercise consists of training a convolutional neural network on a dataset o
 ###### importing the data in numpy arrays:
 27 arrays because we have 27 artists
 Each array will be named by an artist name and contain the images of the corresponding artist
-I stored the images of each artist in a different array, then stored this array in a dictionary
+In a sorted manner, for reproducibility of the model, i stored the images of each artist in a different array, then stored this array in a dictionary
 
-TODO :
-    -   transform each array to a numpy array
-    -   shuffle using a seed, for reproducibility
-    -   divide each array into 75% train - 25% test
-    -   merge all train arrays together and all test arrays together
-    -   split train and test into X_train, y_train, X_test, y_test
+###### preparing train and test sets:
+In the dictionary {artist : [images]}, i transformed each image array to a numpy array for better manipulation
+I shuffled all the images in place using a seed for reproducibility
+75% of the images went for training, the other 25% for testing
+Train and test sets are numpy arrays of [image, label] pairs, which will make it easier to divide them into X_train, y_train, X_test, y_test
+X_train and X_test images were normalized by changing the type to 'float32' and dividing each value by 255
+y_train and y_test artist names were encoded using sklearn.preprocessing
+
+###### cnn training
