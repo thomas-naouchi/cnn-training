@@ -7,9 +7,8 @@ drive.mount('/content/drive')
 
 ### Reading images from drive
 
-import cv2
-cv2.imread(path_to_image)
+Example in [importing_dataset.ipynb](importing_dataset.ipynb)
 
 ### Hyperparameter tuning
 
-Example in [hyperparameter_tuning.py](hyperparameter_tuning.ipynb)
+Example in [hyperparameter_tuning.ipynb](hyperparameter_tuning.ipynb)
