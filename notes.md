@@ -7,8 +7,8 @@ drive.mount('/content/drive')
 
 ### Reading images from drive
 
-Example in [importing_dataset.ipynb](importing_dataset.ipynb)
+Example in [examples/importing_dataset.ipynb](examples/importing_dataset.ipynb)
 
 ### Hyperparameter tuning
 
-Example in [hyperparameter_tuning.ipynb](hyperparameter_tuning.ipynb)
+Example in [examples/hyperparameter_tuning.ipynb](examples/hyperparameter_tuning.ipynb)
