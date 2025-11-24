@@ -57,11 +57,15 @@ Even when using a GPU or a TPU, training still took a lot of time, and this was 
 
 I realized that importing a dataset that way was much quicker and easier.
 Turns out the dataset was not imported, but would actually be imported whenever needed, ex: train the model, print or display the dataset.
-So instead of having a sequential (import all data -> train the model image by image) flow, the new flow was (whenever i want to train, import a batch of 32 images -> pass this batch for training -> repeat importing and passing data until all data is imported)
+So instead of having a sequential flow (import all data at once -> train the model image by image), the new flow was (whenever i want to train, import a batch of 32 images -> pass this batch for training -> repeat importing and passing data until all data is imported)
 This would solve an issue i used to face earlier, as my RAM would be flooded with data and at some point even become full and i would have to rerun everything on colab hoping to not run out of memory again
 
 ###### preparing train and test sets
 
-Imported 75% of data for training and 25% for testing
+Imported 75% of data for training and 25% for testing.
+However i wanted to also include a validation set.
+Instead of storing the data into numpy arrays and risking running out of memory, i stratified my data inside a google drive folder and will be importing the train/val/test sets in tensorflow datasets.
+The stratification is only done once, as now the train/val/test sets are always ready to be imported.
+The stratification section of the notebook will be commented.
 
 ######
