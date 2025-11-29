@@ -68,4 +68,21 @@ Instead of storing the data into numpy arrays and risking running out of memory,
 The stratification is only done once, as now the train/val/test sets are always ready to be imported.
 The stratification section of the notebook will be commented.
 
-######
+###### building the model
+
+After implementing hyperparameter tuning and changing the architecture multiple times, i found an architecture that achieved approx. 70% accuracy with a set of specific parameters
+I had to find also the best epoch that teaches the model just enough but not too much to overfit the training data.
+I saved a model at every epoch and added an early stopping callback whenever the loss stopped going down, then plotted training vs validation metrics to pick the best epoch.
+
+###### Fine tuning EfficientNetB0
+
+I then had to unfreeze the last few layers of EfficientNetB0 to fine tune the convolutional layer.
+I retrained the model with a smaller learning rate, and ended up with approx. 75% accuracy on testing data 
+
+###### Repeating 10 times
+
+I rebuilt and trained the same model 10 times with different training and testing sets to ensure the splits were not easy to learn, or the model was not just lucky guessing the testing data.
+
+###### Saving the final model
+
+I retrained the model on the whole dataset and saved the model for future predictions
